@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one"></div>
+    <script>
+// ----------variabals - let , var const------------------------------------------------------
+
+    //    document.getElementById("one").innerHTML="ffeddddddddde"
+        // document.write("<p>hi</p>")
+        // document.write("<p>hello</p>")
+        // console.log("hello"+"i")
+        // console.log("max");
+                            // LET Re Assign Allow & Re Dec Not Allow
+         
+        // let a=40
+        //      a=50
+        //   let b="30";
+        //  document.write(a)
+        //  console.log(b);
+        // // Re Assign
+        // a=20
+        // console.log(a);
+        // // //RE Dec
+        //  a=30
+        // console.log(a);
+        let quantity = 10;
+        
+        if(true){
+        let quantity =11;
+        // document.write(quantity); 
+        }document.write(quantity);
+
+        // --------------------------------------------------
+        if(true){
+        let marks = 60;
+        alert(marks); //output 60
+        }
+         alert(marks); // error: marks is not defined
+
+         
+        //                     // VAR ALLOW BOTH RE Assign & RE Dec
+        // var a=10
+        // a=20
+        // var a=30
+        // console.log(a)
+
+        // a=20
+        // console.log(a);
+        
+        // var a=30
+        // console.log(a);
+        var im_global = "Hello everyone";
+        function sayhi(){
+        var im_local = "Hi";
+        }
+         document.write(im_local);  // Error: im_local is undefined
+   
+
+        //  -----------------but--------
+        var im_global = "Hello everyone";
+        function sayhi(){
+        var im_local = "Hi";
+        document.write(im_local);
+        }
+
+        //                     // CONST
+        // const a=10
+    
+        // console.log(a);
+
+    </script>
+</body>
+</html>

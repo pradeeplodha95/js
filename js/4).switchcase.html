@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><p id="one"></p>
+    <script> 
+        //  color=8
+        // switch (color) {
+        //     case 1:
+        //         document.write("red")
+        //         break;
+        //     case 2:
+        //         document.write("blue")
+        //         break;
+        //     case 3:
+        //         document.write("pink")
+        //         break;
+        //     case 8:
+        //         document.write("yellow")
+        //         break;
+        //     case 5:
+        //         document.write("black")
+        //         break;
+        //     case 6:
+        //         document.write("white")
+        //         break;
+        //     case 4:
+        //         document.write("green")
+        //         break;
+        
+        //     default:
+        //         document.write("INvalid")
+        //         break;
+        // }
+
+        // ----------------dynamic---------
+        var day
+        switch (new Date().getMonth()) {
+            case 1:
+                month="jan"
+                break;
+            case 2:
+                month="feb"
+                break;
+            case 3:
+                month="march"
+                break;
+            case 4:
+                month="apr"
+                break;
+            case 5:
+                month="may"
+                break;
+            case 6:
+                month="june"
+                break;
+            case 7:
+                month="july"
+                break;
+            case 8:
+                month="aug"
+                break;
+            case 9:
+                month="sep"
+                break;
+            case 10:
+                month="oct"
+                break;
+            case 11:
+                month="nov"
+                break;
+            case 12:
+                month="dec"
+                break;
+        }
+        document.getElementById("one").innerHTML=month
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>maths</td>
+            <td><input type="text" maxlength="2" minlength="2" name="" id="one" onkeyup="a()"></td>
+        </tr>
+        <tr>
+            <td>science</td>
+            <td><input type="text" maxlength="2" minlength="2" name="" id="one0" onkeyup="a()"></td>
+        </tr>
+        <tr>
+            <td>english</td>
+            <td><input type="text" maxlength="2" minlength="2"  name="" id="one1" onkeyup="a()"></td>
+        </tr>
+        <tr>
+            <td>ans</td>
+            <td id="two">0</td>
+        </tr>       
+    </table>
+    <script>
+        function a() {
+            var n1 = parseFloat(document.getElementById("one").value);
+            var n2 = parseFloat(document.getElementById("one0").value);
+            var n3 = parseFloat(document.getElementById("one1").value);
+
+            
+
+            document.getElementById("two").innerHTML =  n1 + n2 + n3;
+        }
+    </script>
+</body>
+</html>

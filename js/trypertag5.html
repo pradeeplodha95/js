@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sterror {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return a()">
+        <table border="1" align="center">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" id="name" class="n1"></td>
+                <td><span id="nameError" class="sterror"></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" id="email"></td>
+                <td><span id="emailError" class="sterror"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function seterror(elementId, sterror) {
+            var b = document.getElementById(elementId).innerHTML=sterror;
+            // errorElement.innerHTML = error;
+            // errorElement.classList.add("error");
+        }
+
+        // function clearerror(elementId) {
+        //     var errorElement = document.getElementById(elementId);
+        //     errorElement.innerHTML = "";
+        //     errorElement.classList.remove("error");
+        // }
+
+        function a() {
+            var name = document.getElementById("name").value;
+            if (name == "") {
+                seterror("nameError", "Please enter a name");
+                document.getElementById('name').focus();
+                return false;
+            }
+            if (name.length < 5) {
+                seterror("nameError", "Name is too short");
+                document.getElementById('name').focus();
+                return false;
+            }
+
+            var email = document.getElementById("email").value;
+            if (email.length > 5) {
+                seterror("emailError", "Email is too long");
+                document.getElementById("email").focus();
+                return false;
+            }
+            if (email.length == "") {
+                seterror("emailError", "Email is empty");
+                document.getElementById("email").focus();
+                return false;
+            }
+            
+            // Clear any previous error messages when validation passes
+            // clearerror("nameError");
+            // clearerror("emailError");
+            return true; // Allow the form to submit if validation passes
+        }
+    </script>
+</body>
+</html>

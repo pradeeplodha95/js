@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>2000</td>
+            <td><input type="number" name="" id="one" onkeyup="a()"></td>
+            <td id="two">0</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td><input type="number" name="" id="three" onkeyup="a()"></td>
+            <td id="four">0</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td><input type="number" name="" id="five" onkeyup="a()"></td>
+            <td id="five1">0</td>
+        </tr>
+        <tr><td></td><td>total</td>
+           <td id="six">
+               total
+           </td>
+        </tr>
+    </table>
+    <script>
+      function a() {
+        var n1=document.getElementById("one").value
+        var r1=document.getElementById("two").innerHTML=2000*n1
+        var n2=document.getElementById("three").value
+        var r2=document.getElementById("four").innerHTML=500*n2
+        var n3=document.getElementById("five").value
+        var r3=document.getElementById("five1").innerHTML=100*n3
+
+        var r4=document.getElementById("six").innerHTML=r1+r2+r3
+        // var r4=document.getElementById("six").innerHTML=n1+n2+n3
+
+
+     
+      }
+
+    </script>
+</body>
+</html>

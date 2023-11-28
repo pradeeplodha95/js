@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .ferror{color: red;}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return a()">
+        <table border="1" align="center">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="" id="name" onblur="a()">
+                <span id="nameerror" class="ferror "></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" id="email" onblur="a()" >
+                <span id="emailerror" class="ferror"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<script>
+   function clearErrors() {
+
+errors = document.getElementsByClassName('ferror');
+for (let item of errors) {
+    item.innerHTML = "";
+}
+
+
+}
+    function seterror(id,ferror) {
+       var b= document.getElementById(id).innerHTML= ferror
+    }
+   
+    function a(){
+        // seterror("nameerror","")
+        var
+        j = document.getElementById("name").value;
+        
+        if(j == ""){
+            seterror("nameerror","name is empty")
+            // document.getElementById("name").focus();
+            return false
+        }
+         else{
+            document.getElementById("nameerror").innerHTML=""
+        }
+        
+        if(j.length < 5){
+            seterror("nameerror","name is short")
+            // document.getElementById("name").focus();
+            return false
+        }
+        var b = document.getElementById("email").value
+        if(b == ""){
+            seterror("emailerror","email is empty")
+            // document.getElementById("email").focus();
+            return false
+        }
+        if(b.length>15){
+            seterror("emailerror",("email is too long"))
+            // document.getElementById("email").focus();
+            return false
+        }
+        
+        return true;
+    }
+</script>
