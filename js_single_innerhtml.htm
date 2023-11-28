@@ -1,0 +1,234 @@
+﻿<!--
+Author: MORI PIYUSH
+Start date: 12th Jan,2012
+End date:  12th Jan,2012
+Modify: Hardik Shah
+Modify date: 12th Jan,2012
+Logic: JavaScript single innerHtml Demo
+-->
+
+<html>
+<head>
+    <title>Javascript Inline Msg Demo</title>
+    <script language="javascript" type="text/javascript">
+
+	function validate()
+	{
+		    //alert("JS Demo");
+			
+		var err_flag = false;
+		var fnm = document.reg_frm.fnm_txt.value;
+		var lnm = document.reg_frm.lnm_txt.value;
+		var email = document.reg_frm.email_txt.value;
+		var pwd = document.reg_frm.pwd_txt.value;
+		var rbt1 = document.reg_frm.gen_rbt[0].checked;
+		var rbt2 = document.reg_frm.gen_rbt[1].checked;
+
+		var chk1 = document.reg_frm.edu_chk[0].checked;
+		var chk2 = document.reg_frm.edu_chk[1].checked;
+		var chk3 = document.reg_frm.edu_chk[2].checked;
+		var chk4 = document.reg_frm.edu_chk[3].checked;
+		var chk5 = document.reg_frm.edu_chk[4].checked;
+		
+		var sel = document.reg_frm.country_sel.value;
+		var sel = document.reg_frm.country_sel.selectedIndex;
+		//alert(sel);
+	
+		if(fnm == "")
+		{
+			document.getElementById("fnm_msg").innerHTML = "plz enter fname!";
+			err_flag = true;
+			document.getElementById("lnm_msg").innerHTML = "";
+			document.getElementById("email_msg").innerHTML = "";
+			document.getElementById("pwd_msg").innerHTML = "";
+			document.getElementById("gen_msg").innerHTML = "";
+			document.getElementById("edu_msg").innerHTML = "";
+			document.getElementById("cont_msg").innerHTML = "";
+		}
+		else if(lnm == "")
+		{
+			document.getElementById("lnm_msg").innerHTML = "plz enter lname!";
+			err_flag = true;
+			document.getElementById("fnm_msg").innerHTML = "";
+			document.getElementById("email_msg").innerHTML = "";
+			document.getElementById("pwd_msg").innerHTML = "";
+			document.getElementById("gen_msg").innerHTML = "";
+			document.getElementById("edu_msg").innerHTML = "";
+			document.getElementById("cont_msg").innerHTML = "";
+
+		}
+		else if(email == "")
+		{
+			document.getElementById("email_msg").innerHTML = "plz enter email!";
+			err_flag = true;
+			document.getElementById("fnm_msg").innerHTML = "";
+			document.getElementById("lnm_msg").innerHTML = "";
+			document.getElementById("pwd_msg").innerHTML = "";
+			document.getElementById("gen_msg").innerHTML = "";
+			document.getElementById("edu_msg").innerHTML = "";
+			document.getElementById("cont_msg").innerHTML = "";
+			
+		}
+		else if(pwd == "")
+		{
+			document.getElementById("pwd_msg").innerHTML = "plz enter pwd!";
+			err_flag = true;
+			document.getElementById("lnm_msg").innerHTML = "";
+			document.getElementById("email_msg").innerHTML = "";
+			document.getElementById("fnm_msg").innerHTML = "";
+			document.getElementById("gen_msg").innerHTML = "";
+			document.getElementById("edu_msg").innerHTML = "";
+			document.getElementById("cont_msg").innerHTML = "";
+
+		}
+		else if(rbt1 == false && rbt2 == false)
+		{
+			document.getElementById("gen_msg").innerHTML = "plz select sex!";
+			err_flag = true;
+			document.getElementById("lnm_msg").innerHTML = "";
+			document.getElementById("email_msg").innerHTML = "";
+			document.getElementById("pwd_msg").innerHTML = "";
+			document.getElementById("fnm_msg").innerHTML = "";
+			document.getElementById("edu_msg").innerHTML = "";
+			document.getElementById("cont_msg").innerHTML = "";
+			
+		}
+		else if(chk1 == false && chk2 == false
+				&& chk3 == false && chk4 == false && chk5 == false)
+		{
+			document.getElementById("edu_msg").innerHTML = "plz select education!";
+			err_flag = true;
+			document.getElementById("lnm_msg").innerHTML = "";
+			document.getElementById("email_msg").innerHTML = "";
+			document.getElementById("pwd_msg").innerHTML = "";
+			document.getElementById("gen_msg").innerHTML = "";
+			document.getElementById("fnm_msg").innerHTML = "";
+			document.getElementById("cont_msg").innerHTML = "";
+
+		}
+		else if(sel == "0")
+		{
+			document.getElementById("cont_msg").innerHTML = "plz select country!";
+			err_flag = true;
+			document.getElementById("lnm_msg").innerHTML = "";
+			document.getElementById("email_msg").innerHTML = "";
+			document.getElementById("pwd_msg").innerHTML = "";
+			document.getElementById("gen_msg").innerHTML = "";
+			document.getElementById("edu_msg").innerHTML = "";
+			document.getElementById("fnm_msg").innerHTML = "";
+
+		}
+
+		if(err_flag)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+    </script>
+
+</head>
+<body>
+    <form name="reg_frm" action="#" method="get" onSubmit="return validate();">
+    <table border="0" align="left" cellspacing="10" cellpadding="5">
+        <tr>
+            <td colspan="2" align="center" bgcolor="#66CCFF">
+                <h1>Form Demo</h1>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                First Name:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <input type="text" maxlength="25" name="fnm_txt" size="30" />
+	            
+            </td>
+			<td id="fnm_msg"></td>    
+            
+            
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                Last Name:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <input type="text" maxlength="25" name="lnm_txt" size="30" />
+                
+            </td>
+            <td id="lnm_msg"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                Eamil:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <input type="text" maxlength="50" name="email_txt" size="30" />
+                
+            </td>
+            <td id="email_msg"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                Password:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <input type="password" maxlength="50" name="pwd_txt" size="30" />
+                
+            </td>
+            <td id="pwd_msg"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                Gender:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <input type="radio" name="gen_rbt" value="male" />Male
+                <input type="radio" name="gen_rbt" value="female" />Female
+                
+            </td>
+            <td id="gen_msg"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                Education:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <input type="checkbox" name="edu_chk" value="10" />10 Class Pass<br />
+                <input type="checkbox" name="edu_chk" value="12" />12 Class Pass<br />
+                <input type="checkbox" name="edu_chk" value="grad" />Graduation<br />
+                <input type="checkbox" name="edu_chk" value="pg" />PG<br />
+                <input type="checkbox" name="edu_chk" value="pg+" />PG+
+            </td>
+            <td id="edu_msg"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF">
+                Country:
+            </td>
+            <td bgcolor="#CCCCCC">
+                <select name="country_sel">
+                    <option>Select Country</option>
+                    <option value="1">India</option>
+                    <option value="2">USA</option>
+                    <option value="3">UK</option>
+                    <option value="4">Australia</option>
+                    <option value="5">Canada</option>
+                </select>
+                
+            </td>
+            <td id="cont_msg"></td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF" colspan="2" align="center">
+                <input type="submit" name="send_sub" value="Register" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" name="clr_btn" value="Clear" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
